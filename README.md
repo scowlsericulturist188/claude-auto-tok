@@ -17,6 +17,16 @@
 
 ---
 
+## Demo
+
+> Sample output from `pnpm swarm:run "build a SaaS in a weekend with Claude Code"`
+
+<video src="https://github.com/nullxnothing/claude-auto-tok/releases/download/v1.0.0/demo.mp4" controls width="320"></video>
+
+[Watch the demo video](https://github.com/nullxnothing/claude-auto-tok/releases/download/v1.0.0/demo.mp4) if the embed doesn't load.
+
+---
+
 ## How It Works
 
 ```
